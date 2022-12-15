@@ -11,17 +11,25 @@ import products from "../assets/fake-data/products.js";
 
 import foodCategoryImg01 from "../assets/images/hamburger.png";
 import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+import foodCategoryImg03 from "../assets/images/wrap.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
 import Slider from "../components/Slider.js";
+
+import { useNavigate  } from "react-router-dom";
 
 
 const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
 
+  const navigate = useNavigate();
+
+  const redirectToFoods = () => {
+    //Redirect to the python page
+    navigate("/foods");
+  };
 
   useEffect(() => {
     if (category === "ALL") {
@@ -44,15 +52,16 @@ const Home = () => {
       setAllProducts(filteredProducts);
     }
 
-    if (category === "BREAD") {
+    if (category === "WRAPS") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Bread"
+        (item) => item.category === "Wraps"
       );
 
       setAllProducts(filteredProducts);
     }
   }, [category]);
 
+  
   return (
     <Helmet title="Home">
       <section>
@@ -70,19 +79,10 @@ const Home = () => {
                 </h4>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
-                  <button className="order__btn d-flex align-items-center justify-content-between">
+                  <button className="order__btn d-flex align-items-center justify-content-between" onClick={redirectToFoods}>
                     Order now <i class="ri-arrow-right-s-line"></i>
                   </button>
 
-                </div>
-
-                <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">
-                  <p className=" d-flex align-items-center gap-2 ">
-                    <span className="shipping__icon">
-                      <i class="ri-shield-check-line"></i>
-                    </span>{" "}
-                    100% Quality check
-                  </p>
                 </div>
               </div>
 
@@ -137,12 +137,12 @@ const Home = () => {
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BREAD" ? "foodBtnActive" : ""
+                    category === "WRAPS" ? "foodBtnActive" : ""
                   } `}
-                  onClick={() => setCategory("BREAD")}
+                  onClick={() => setCategory("WRAPS")}
                 >
                   <img src={foodCategoryImg03} alt="" />
-                  Bread
+                  Wraps
                 </button>
               </div>
             </Col>
