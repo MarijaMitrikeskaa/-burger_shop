@@ -1,13 +1,13 @@
 import React, { useRef, useEffect } from "react";
 
 import { Container } from "reactstrap";
-import logo from "../../assets/images/burger-logo.png";
+import logo from "../images/burger-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+import { cartUiActions } from "../store/shopping-cart/cartUiSlice";
 
-import "../../styles/header.css";
+import "../styles/header.css";
 
 const nav__links = [
   {
@@ -30,33 +30,37 @@ const nav__links = [
 
 const Header = () => {
   const menuRef = useRef(null);
-  const headerRef = useRef(null);
+  //const headerRef = useRef(null);
+  // ja zema sostojbata na kosnickata 
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
+
+  //toggle side cart
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (
+  //       document.body.scrollTop > 80 ||
+  //       document.documentElement.scrollTop > 80
+  //     ) {
+  //       headerRef.current.classList.add("header__shrink");
+  //     } else {
+  //       headerRef.current.classList.remove("header__shrink");
+  //     }
+  //   });
 
-    return () => window.removeEventListener("scroll");
-  }, []);
+  //   return () => window.removeEventListener("scroll");
+  // }, []);
 
   return (
-    <header className="header" ref={headerRef}>
+    <header className="header" >
+     {/* ref={headerRef}> */}
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
@@ -64,7 +68,9 @@ const Header = () => {
           </div>
 
           {/* ======= menu ======= */}
-          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+          {/* <div className="navigation" ref={menuRef} onClick={toggleMenu}> */}
+          <div className="navigation" onClick={toggleMenu}>
+
             <div className="menu d-flex align-items-center gap-5">
               {nav__links.map((item, index) => (
                 <NavLink
@@ -87,15 +93,9 @@ const Header = () => {
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
-            <span className="user">
-              <Link to="/login">
-                <i class="ri-user-line"></i>
-              </Link>
-            </span>
+           
 
-            <span className="mobile__menu" onClick={toggleMenu}>
-              <i class="ri-menu-line"></i>
-            </span>
+            
           </div>
         </div>
       </Container>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
+
 
 import "../styles/checkout.css";
 
@@ -36,9 +36,9 @@ const Checkout = () => {
   };
 
   return (
-    <Helmet title="Checkout">
-      <CommonSection title="Checkout" />
       <section>
+      <CommonSection title="Checkout" />
+
         <Container>
           <Row>
             <Col lg="8" md="6">
@@ -117,7 +117,7 @@ const Checkout = () => {
           </Row>
         </Container>
       </section>
-    </Helmet>
+ 
   );
 };
 

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";
 
-import products from "../assets/fake-data/products";
+import products from "../dummy_data/food_data";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 
@@ -18,7 +17,8 @@ const AllFoods = () => {
 
   const searchedProduct = products.filter((item) => {
 
-    if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+    // if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      if (item.title.includes(searchTerm)) {
       return item;
     } else {
       return console.log("not found");
@@ -39,10 +39,11 @@ const AllFoods = () => {
   };
 
   return (
-    <Helmet title="All-Foods">
-      <CommonSection title="All Foods" />
+
+   
 
       <section>
+           <CommonSection title="All Foods" />
         <Container>
           <Row>
             {displayPage.map((item) => (
@@ -63,7 +64,7 @@ const AllFoods = () => {
           </Row>
         </Container>
       </section>
-    </Helmet>
+  
   );
 };
 

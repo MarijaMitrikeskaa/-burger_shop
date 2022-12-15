@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 
 import "../styles/hero-section.css";
 
 import "../styles/home.css";
 
-import products from "../assets/fake-data/products.js";
+import products from "../dummy_data/food_data.js";
 
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/wrap.png";
+import foodCategoryImg01 from "../images/hamburger.png";
+import foodCategoryImg02 from "../images/pizza.png";
+import foodCategoryImg03 from "../images/wrap.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
@@ -63,7 +62,7 @@ const Home = () => {
 
   
   return (
-    <Helmet title="Home">
+    <section>
       <section>
         <Container>
           <Row>
@@ -155,7 +154,8 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-    </Helmet>
+      </section>
+   
   );
 };
 

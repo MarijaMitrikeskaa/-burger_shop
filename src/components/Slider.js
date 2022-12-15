@@ -1,5 +1,5 @@
 import React from "react";
-import "./Slider.css";
+import "../styles/slider.css";
 export default function Slider(){
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -31,13 +31,13 @@ export default function Slider(){
               onClick={() => check(2)}
             />
             <label htmlFor="s1" id="slide1">
-              <img className="fea" src={require('../assets/images/ad1.png')} height="100%" width="100%" alt="ad1"/>
+              <img className="fea" src={require('../images/ad1.png')} height="100%" width="100%" alt="ad1"/>
             </label>
             <label htmlFor="s2" id="slide2">
-              <img className="fea" src={require('../assets/images/ad2.png')} height="100%" width="100%" alt="ad2"/>
+              <img className="fea" src={require('../images/ad2.png')} height="100%" width="100%" alt="ad2"/>
             </label>
             <label htmlFor="s3" id="slide3">
-              <img className="fea" src={require('../assets/images/ad3.png')} height="100%" width="100%" alt="ad3"/>
+              <img className="fea" src={require('../images/ad3.png')} height="100%" width="100%" alt="ad3"/>
             </label>
           </section>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
+
 import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
@@ -12,9 +12,10 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   return (
-    <Helmet title="Cart">
-      <CommonSection title="Your Cart" />
+   
       <section>
+              <CommonSection title="Your Cart" />
+
         <Container>
           <Row>
             <Col lg="12">
@@ -58,7 +59,7 @@ const Cart = () => {
           </Row>
         </Container>
       </section>
-    </Helmet>
+    
   );
 };
 
