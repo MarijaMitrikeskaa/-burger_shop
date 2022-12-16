@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import CommonSection from "../components/UI/common-section/CommonSection";
+import CommonSection from "../components/UI/BackgroundSection";
 
 import { Container, Row, Col } from "reactstrap";
 
 import products from "../dummy_data/food_data";
-import ProductCard from "../components/UI/product-card/ProductCard";
+import ProductCard from "../components/UI/ProductCard";
 import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";

@@ -1,14 +1,16 @@
 import React from "react";
 
-import "../../../styles/product-card.css";
+import "../../styles/product-card.css";
 
-import { Link } from "react-router-dom";
+
 
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import { cartActions } from "../../store/shopping-cart/cartSlice";
 
 const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;
+  // useDispatch takes in an object that contains the action type 
+  // and payload, which will be compared to all the reducers and the state will be changed accordingly.
   const dispatch = useDispatch();
 
   const addToCart = () => {
@@ -29,9 +31,7 @@ const ProductCard = (props) => {
       </div>
 
       <div className="product__content">
-        <h5>
-          <Link to={`/foods/${id}`}>{title}</Link>
-        </h5>
+       
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">{price} den.</span>
           <button className="addTOCart__btn" onClick={addToCart}>

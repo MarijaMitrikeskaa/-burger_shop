@@ -12,7 +12,7 @@ import foodCategoryImg01 from "../images/hamburger.png";
 import foodCategoryImg02 from "../images/pizza.png";
 import foodCategoryImg03 from "../images/wrap.png";
 
-import ProductCard from "../components/UI/product-card/ProductCard";
+import ProductCard from "../components/UI/ProductCard";
 
 import Slider from "../components/Slider.js";
 
@@ -23,11 +23,7 @@ const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
 
-  const navigate = useNavigate();
 
-  const redirectToMenu = () => {
-    navigate("/menu");
-  };
 
   useEffect(() => {
     if (category === "ALL") {
@@ -58,6 +54,12 @@ const Home = () => {
       setAllProducts(filteredProducts);
     }
   }, [category]);
+
+  const navigate = useNavigate();
+
+  const redirectToMenu = () => {
+    navigate("/menu");
+  };
 
   
   return (

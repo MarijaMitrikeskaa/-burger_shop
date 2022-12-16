@@ -1,6 +1,5 @@
 import React from "react";
-
-import CommonSection from "../components/UI/common-section/CommonSection";
+import CommonSection from "../components/UI/BackgroundSection";
 
 import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -42,10 +41,10 @@ const Cart = () => {
 
               <div className="mt-4">
                 <h6>
-                  Subtotal: 
+                  Total: 
                   <span className="cart__subtotal"> {totalAmount} den</span>
                 </h6>
-                <p> </p>
+               
                 <div className="cart__page-btn">
                   <button className="addTOCart__btn me-4">
                     <Link to="/menu">Continue Shopping</Link>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import CommonSection from "../components/UI/common-section/CommonSection";
+import CommonSection from "../components/UI/BackgroundSection";
 
 
 import "../styles/checkout.css";
