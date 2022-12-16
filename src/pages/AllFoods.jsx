@@ -11,28 +11,21 @@ import "../styles/all-foods.css";
 import "../styles/pagination.css";
 
 const AllFoods = () => {
-  const [searchTerm] = useState("");
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const searchedProduct = products.filter((item) => {
-
-    // if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-      if (item.title.includes(searchTerm)) {
-      return item;
-    } else {
-      return console.log("not found");
-    }
+  const product = products.map((item) => {
+    return item
   });
 
   const productPerPage = 12;
   const visitedPage = pageNumber * productPerPage;
-  const displayPage = searchedProduct.slice(
+  const displayPage = product.slice(
     visitedPage,
     visitedPage + productPerPage
   );
 
-  const pageCount = Math.ceil(searchedProduct.length / productPerPage);
+  const pageCount = Math.ceil(product.length / productPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);

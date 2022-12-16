@@ -5,7 +5,6 @@ import logo from "../images/burger-logo.png";
 
 import "../styles/footer.css";
 
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { Container } from "reactstrap";
 import logo from "../images/burger-logo.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { cartUiActions } from "../store/shopping-cart/cartUiSlice";
