@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="3" md="4" sm="6">
+          <Col lg="4" md="4" sm="6">
             <div className=" footer__logo text-start">
               <img src={logo} alt="logo" />
               <h5>Burger House</h5>
@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
+          <Col lg="4" md="4" sm="6">
             <h5 className="footer__title">Delivery Time</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
@@ -31,7 +31,7 @@ const Footer = () => {
             </ListGroup>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
+          <Col lg="4" md="4" sm="6">
             <h5 className="footer__title">Contact</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
@@ -47,19 +47,8 @@ const Footer = () => {
             </ListGroup>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Newsletter</h5>
-            <p>Subscribe our newsletter</p>
-            <div className="newsletter">
-              <input type="email" placeholder="Enter your email" />
-              <span>
-                <i class="ri-send-plane-line"></i>
-              </span>
-            </div>
-          </Col>
         </Row>
 
-       
       </Container>
     </footer>
   );

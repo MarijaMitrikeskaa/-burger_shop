@@ -12,7 +12,7 @@ import foodCategoryImg01 from "../images/hamburger.png";
 import foodCategoryImg02 from "../images/pizza.png";
 import foodCategoryImg03 from "../images/wrap.png";
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import ProductCard from "../components/UI/product-card/ProductCard";
 
 import Slider from "../components/Slider.js";
 
@@ -25,9 +25,8 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  const redirectToFoods = () => {
-    //Redirect to the python page
-    navigate("/foods");
+  const redirectToMenu = () => {
+    navigate("/menu");
   };
 
   useEffect(() => {
@@ -78,7 +77,7 @@ const Home = () => {
                 </h4>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
-                  <button className="order__btn d-flex align-items-center justify-content-between" onClick={redirectToFoods}>
+                  <button className="order__btn d-flex align-items-center justify-content-between" onClick={redirectToMenu}>
                     Order now <i class="ri-arrow-right-s-line"></i>
                   </button>
 

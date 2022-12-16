@@ -1,10 +1,10 @@
 import React from "react";
 
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+import Header from "./Header";
+import Footer from "./Footer";
 import Routes from "./Routers";
 
-import Carts from "./UI/cart/Carts.jsx";
+import Carts from "./UI/cart/Carts";
 import { useSelector } from "react-redux";
 
 const Layout = () => {
